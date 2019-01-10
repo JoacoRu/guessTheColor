@@ -5,6 +5,7 @@ window.onload = function(){
     var form = document.querySelector('#form');
     var functionalContainer = document.querySelector('.functionalContainer');
     var boxContainer2 = document.querySelector('.boxContainer2');
+    var boxContainer1 = document.querySelector('.boxContainer1');
     var cajaUp1 = document.querySelector('#cajaUp1');
     var cajaUp2 = document.querySelector('#cajaUp2');
     var cajaUp3 = document.querySelector('#cajaUp3');
@@ -54,17 +55,42 @@ window.onload = function(){
             let box = boxContainer2.children;
             for (let i = 0; i < box.length; i++) {
                 const element = box[i];
-                element.addEventListener('drag', function(){
+                element.addEventListener('drag', dragStart);
+            }
 
-                });
+            let box1 = boxContainer1.children;
+            for (let i = 0; i < box1.length; i++) {
+                const element = box1[i];
+                element.addEventListener('dragover', dragLeave);
+                
             }
 
     }
+    let unArray;
+
+    function dragStart(){
+        let foo = this.id.split(' ')[1];
+        this.style.border = '1px solid black';
+        this.borderRadius = '5px'; 
+        unArray = foo;
+    }
+
+    function dragLeave(){
+        let id = this.id.split(' ')[1];
+        if(unArray == id){
+            this.style.backgroundColor = id;
+            this.style.border = '2px solid black';
+            this.innerHTML = 'Pefeto!';
+        }
+    }
 
     function styles(){
-        cajaUp1.style.backgroundColor = color1.value;
-        cajaUp2.style.backgroundColor = color2.value;
-        cajaUp3.style.backgroundColor = color3.value;
+        cajaUp1.style.borderColor = color1.value;
+        cajaUp2.style.borderColor = color2.value;
+        cajaUp3.style.borderColor = color3.value;
+        cajaUp1.style.borderStyle =  'dashed';
+        cajaUp2.style.borderStyle =  'dashed';
+        cajaUp3.style.borderStyle =  'dashed';
         cajaBot1.innerHTML = color1.value;
         cajaBot2.innerHTML = color2.value;
         cajaBot3.innerHTML = color3.value;
@@ -86,6 +112,13 @@ window.onload = function(){
         cajaBot1.style.fontSize = '16px';
         cajaBot2.style.fontSize = '16px';
         cajaBot3.style.fontSize = '16px';
+        cajaUp1.setAttribute('id', 'cajaUp1'+ ' ' +color1.value);
+        cajaUp2.setAttribute('id', 'cajaUp1'+ ' ' +color2.value);
+        cajaUp3.setAttribute('id', 'cajaUp1'+ ' ' +color3.value);
+        cajaBot1.setAttribute('id', 'cajaBot1'+ ' ' +color1.value);
+        cajaBot2.setAttribute('id', 'cajaBot1'+ ' ' +color2.value);
+        cajaBot3.setAttribute('id', 'cajaBot1'+ ' ' +color3.value);
+
     }
 
 
