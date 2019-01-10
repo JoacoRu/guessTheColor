@@ -1,0 +1,100 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    margin: 100px;
+}
+
+.superContainer{
+    width: 100%;
+    height: 100%;
+}
+
+.container-first{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+}
+
+.container-first form{
+    display: flex;
+    flex-direction: column;
+}
+
+.container-first form label{
+    display: flex;
+    font-size: 16px;
+    color: black;
+    text-align: start;
+    font-weight: bold;
+}
+
+.container-first form input[type="text"]{
+    border: 1px solid #e9e9e9e9;
+    padding: 10px;
+    border-radius: 5px;
+    color: black;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+.buttonContainer{
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+}
+
+.buttonContainer button[type="submit"]{
+    border: none;
+    padding: 7px;
+    color: black;
+    font-weight: bold;
+    background-color: cornflowerblue;
+    border-radius: 5px;
+}
+
+.buttonContainer button[type="submit"]:focus{
+    background-color: #fff;
+    transition: 1s;
+    border: none;
+}
+
+.functionalContainer{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.boxContainer1{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.cajaUp{
+    width: 100px;
+    height: 100px;
+}
+
+cajaBot{
+    width: 50px;
+    height: 50px; 
+}
+
+.boxContainer2{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 30%;
+}
